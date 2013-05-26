@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-  <title>Gyazo Direct</title>
-</head>
-
-<body>
-  <img id="gyazoImage" />
-</body>
-
-<script type="text/javascript">
-function getUrlVars() {
-  var vars = {};
-  window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-    vars[key] = value;
-  });
-  return vars;
-}
-document.getElementById("gyazoImage").src = "http://gyazo.com/" + getUrlVars()["id"] + ".png";
-</script>
-
+  <head>
+    <title>Gyazo Direct</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  
+  <body>
+    <img id="gyazoImage" />
+  </body>
+  
+  <script type="text/javascript">
+  function getUrlVars() {
+    var vars = {};
+    window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+      vars[key] = value;
+    });
+    return vars;
+  }
+  document.getElementById("gyazoImage").src = "http://gyazo.com/" + getUrlVars()["id"] + ".png";
+  </script>
 </html>
