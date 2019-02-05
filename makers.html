@@ -1,0 +1,14 @@
+---
+layout: page
+title: Makers
+---
+
+{% for author in site.authors %}
+
+<a href="{{ author.url }}"><h4>{{ author.name }}</h4></a>
+
+<p>{{ author.position }}</p>
+
+<p>{{ author.content | markdownify }}</p>
+
+{% endfor %}

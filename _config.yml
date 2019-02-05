@@ -1,11 +1,20 @@
+#title: My Blog
+#email: ""
+#description: >-
+#  My Personal Blog using Jekyll and Github Pages. Welcome!
+
 repository: ffoxin/ffoxin.github.io
 
 plugins:
+- jekyll-feed
 - jekyll-github-metadata
 - jekyll-mentions
 - jekyll-redirect-from
 - jekyll-sitemap
 - jemoji
+
+sass:
+  sass_dir: css
 
 collections:
   authors:
@@ -26,3 +35,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+exclude:
+  - .idea
+  - .git

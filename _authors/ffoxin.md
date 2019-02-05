@@ -1,6 +1,6 @@
 ---
 short_name: ffoxin
-name: Admin
-position: Blog Mastermind
+name: T3ch Cat
+position: Software Engineer
 ---
-Admin. James Admin.
+T3ch Cat is a software designer and developer on Python and other best programming languages.
