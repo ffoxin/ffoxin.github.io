@@ -1,35 +1,31 @@
 ---
 layout: page
+title: page.title
+excerpt_separator: <!--more-->
 ---
 
 {% assign author = site.authors | where: 'short_name', page.author | first %}
-<!--{% if author %}-->
-<!-- - <a href="{{ author.url }}">{{ author.name }}</a>-->
-<!--{% endif %}-->
 
-<header>
-  <h3>{{ page.title | escape }}</h3>
-</header>
+<article>
+  <header>
+    <h4>{{ page.title | escape }}</h4>
 
+    <div class="row">
+      <div class="col-auto mr-auto">
+        {%- if author -%}
+        <a href="{{ author.url }}">{{ author.name }}</a>
+        {% endif %}
+      </div>
+      <div class="col-auto">
+        <p class="text-muted font-italic">
+          <time datetime="{{ page.date | date_to_xmlschema }}">
+            {%- assign date_format = "%b %-d, %Y" -%}
+            {{ page.date | date: date_format }}
+          </time>
+        </p>
+      </div>
+    </div>
+  </header>
 
-<div class="row">
-  <div class="col-auto mr-auto">
-    {%- if author -%}
-    <a href="{{ author.url }}">{{ author.name }}</a>
-    {% endif %}
-  </div>
-  <div class="col-auto">
-    <p class="text-muted">
-      <time datetime="{{ page.date | date_to_xmlschema }}">
-        {%- assign date_format = "%b %-d, %Y" -%}
-        {{ page.date | date: date_format }}
-      </time>
-    </p>
-  </div>
-</div>
-
-<section>
   {{ content }}
-</section>
-
 </article>

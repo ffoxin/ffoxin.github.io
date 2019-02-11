@@ -1,26 +1,36 @@
 ---
 layout: page
 title: Latest Posts
+excerpt_separator: <!--more-->
 ---
 {% for post in site.posts %}
 
-<a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
+<section>
+  <header>
+    <a href="{{ post.url }}"><h4>{{ post.title }}</h4></a>
 
-<div class="row">
-  <div class="col-auto mr-auto">
-    {% assign author = site.authors | where: 'short_name', post.author | first %}
-    {% if author %}
-    <a href="{{ author.url }}">{{ author.name }}</a>
-    {% endif %}
-  </div>
-  <div class="col-auto">
-    {% assign publish_date = post.date %}
-    {% if publish_date %}
-    {{ publish_date | date_to_string }}
-    {% endif %}
-  </div>
-</div>
+    <div class="row">
+      <div class="col-auto mr-auto">
+        {% assign author = site.authors | where: 'short_name', post.author | first %}
+        {%- if author -%}
+        <a href="{{ author.url }}">{{ author.name }}</a>
+        {% endif %}
+      </div>
+      <div class="col-auto">
+        {% assign publish_date = post.date %}
+        <p class="text-muted font-italic">
+          {% if publish_date %}
+          <time datetime="{{ publish_date | date_to_xmlschema }}">
+            {%- assign date_format = "%b %-d, %Y" -%}
+            {{ publish_date | date: date_format }}
+          </time>
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </header>
 
-<p>{{ post.excerpt }}</p>
+  <p>{{ post.excerpt }}</p>
+</section>
 
 {% endfor %}

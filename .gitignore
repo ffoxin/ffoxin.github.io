@@ -4,3 +4,4 @@
 *.log
 /.env
 /Gemfile.lock
+/.jekyll-metadata

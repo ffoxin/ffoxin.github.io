@@ -4,6 +4,7 @@
 #  My Personal Blog using Jekyll and Github Pages. Welcome!
 
 repository: ffoxin/ffoxin.github.io
+incremental: true
 
 plugins:
 - jekyll-feed
