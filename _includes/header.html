@@ -1,13 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
   <div class="container">
-    <ul class="navbar-nav md-auto">
+    <a class="navbar-brand" href="../">the blog</a>
+    <button aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#navbarResponsive" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      {% for item in site.data.navigation %}
-      <li class="nav-item {% if page.url== item.link %} active{% endif %}">
-        <a href="{{ item.link }}" class="nav-link">{{ item.name }}</a>
-      </li>
-      {% endfor %}
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
 
-    </ul>
+        {% for item in site.data.navigation %}
+        <li class="nav-item {% if page.url== item.link %} active{% endif %}">
+          <a class="nav-link" href="{{ item.link }}">{{ item.name }}</a>
+        </li>
+        {% endfor %}
+
+        <!--<ul class="nav navbar-nav ml-auto">-->
+        <!--<li class="nav-item">-->
+        <!--<a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a>-->
+        <!--</li>-->
+      </ul>
+
+    </div>
   </div>
 </nav>

@@ -5,6 +5,7 @@
 
 repository: ffoxin/ffoxin.github.io
 incremental: true
+excerpt_separator: <!--more-->
 
 plugins:
 - jekyll-feed

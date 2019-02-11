@@ -1,10 +1,12 @@
 ---
 layout: post
 author: ffoxin
-tags: python
+tags: [python, tips&tricks]
 ---
 Few days ago I was asked if it's possible to create variables with desired names
-on the fly, like following:
+on the fly.
+<!--more-->
+Smth like that:
 
 ```python
 list_vars = ['a', 'b']

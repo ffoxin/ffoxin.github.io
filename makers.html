@@ -5,10 +5,15 @@ title: Makers
 
 {% for author in site.authors %}
 
-<a href="{{ author.url }}"><h4>{{ author.name }}</h4></a>
-
-<p>{{ author.position }}</p>
-
-<p>{{ author.content | markdownify }}</p>
+<div class="card mb-3">
+  <div class="card-body">
+    <h4 class="card-title">{{ author.name }}</h4>
+    <h6 class="card-subtitle mb-2 text-muted">{{ author.position }}</h6>
+    <p class="card-text">{{ author.content | markdownify }}</p>
+    <a href="#" class="card-link">Posts</a>
+    <!--<a href="#" class="card-link">Another link</a>-->
+  </div>
+</div>
 
 {% endfor %}
+

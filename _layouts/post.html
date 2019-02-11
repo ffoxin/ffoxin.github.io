@@ -4,7 +4,43 @@ title: page.title
 excerpt_separator: <!--more-->
 ---
 
+{%- assign date_format = "%b %-d, %Y" -%}
+
+{% assign author = site.authors | where: 'short_name', post.author | first %}
+{% assign publish_date = post.date %}
+
+<div class="card mb-3">
+  <a href="{{ post.url }}"><h3 class="card-header">{{ post.title }}</h3></a>
+
+  <div class="card-body">
+    <h6 class="card-title">
+      {%- if author -%}
+      <p class="text-muted">by <a href="{{ author.url }}">{{ author.name }}</a></p>
+      {% endif %}
+    </h6>
+    <h6 class="card-subtitle text-muted">
+      {% for tag in post.tags %}
+      <span class="badge badge-pill badge-primary">{{tag}}</span>
+      {% endfor %}
+    </h6>
+  </div>
+
+  <div class="card-body">
+    <p class="card-text">{{ post.excerpt | strip_html }}</p>
+  </div>
+
+  <div class="card-footer text-muted">
+    {% if publish_date %}
+    <time datetime="{{ publish_date | date_to_xmlschema }}">
+      {{ publish_date | date: date_format }}
+    </time>
+    {% endif %}
+  </div>
+
+</div>
 {% assign author = site.authors | where: 'short_name', page.author | first %}
+
+
 
 <article>
   <header>
